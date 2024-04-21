@@ -1,6 +1,8 @@
 import express,{Request,Response} from 'express'
 import {UserModel, UserModelDocument } from '../../../Models/User'
 import { CreateUser, Deleteuser, FindUser, Findandupdate, GetUser } from '../Services/Userservice'
+
+
 export class UserController{
 
     GetUser = async(req:Request,res:Response) =>{
