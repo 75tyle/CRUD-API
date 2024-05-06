@@ -3,25 +3,32 @@ import { Id } from "../Common/GenerateId";
 
 export interface UserModel{
     _id?:string
-    name:string,
-    age:number
+    Name:string,
+    Email:string,
+    Password:string,
 }
 export interface UserModelDocument extends Document{
     _id?:string
-    name:string,
-    age:number
+    Name:string,
+    Email:string,
+    Password:string,
 }
+
 const userSchema = new Schema<UserModel>({
     _id:{
         type:String,
-        default:Id(20)
+        required:true
     },
-    name:{
+    Name:{
         type:String,
         required:true
     },
-    age:{
-        type:Number,
+    Email:{
+        type:String,
+        required:true
+    },
+    Password:{
+        type:String,
         required:true
     }
 },{versionKey:false})

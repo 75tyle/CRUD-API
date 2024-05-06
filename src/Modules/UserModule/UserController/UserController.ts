@@ -1,6 +1,7 @@
 import express,{Request,Response} from 'express'
 import {UserModel, UserModelDocument } from '../../../Models/User'
-import { CreateUser, Deleteuser, FindUser, Findandupdate, GetUser } from '../Services/Userservice'
+import { CreateUser, Deleteuser, FindUser, Findandupdate, GetUser, LogIn } from '../Services/Userservice'
+import { Login } from '../../../Models/Login'
 
 
 export class UserController{
@@ -15,8 +16,15 @@ export class UserController{
         const userdata:UserModel = req.body
         var data = await CreateUser(userdata)
         res.json({
+            code:200,
+            Message:"Register User Successfully",
             data:data
         })
+    }
+    LogIn = async(req:Request,res:Response) =>{
+        var user:Login = req.body
+        var data = await LogIn(user)
+            res.json(data)
     }
     FindUser = async(req:Request,res:Response) =>{
         console.log(req.params.id)
@@ -40,4 +48,5 @@ export class UserController{
             data:data
         })
     }
+
 }

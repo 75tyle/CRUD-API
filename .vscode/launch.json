@@ -7,13 +7,14 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}/src/index.ts",
+            "name": "Build Project",
+            "program": "${workspaceFolder}\\src\\index.ts",
+            "preLaunchTask": "npm: build",
+            "sourceMaps": true,
+            "smartStep": true,
+            "internalConsoleOptions": "openOnSessionStart",
             "outFiles": [
-                "${workspaceFolder}/**/*.js"
+                "${workspaceFolder}/bin/**/*.js"
             ]
         }
     ]

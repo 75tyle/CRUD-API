@@ -9,4 +9,5 @@ UserRouter.post("/createuser", User.CreateUser);
 UserRouter.post("/userupdate", User.Findandupdate);
 UserRouter.get("/findbyuserid/:id", User.FindUser);
 UserRouter.delete("/deleteuser/:id", User.Deleteuser);
+UserRouter.post("/login", User.LogIn);
 export { UserRouter };
